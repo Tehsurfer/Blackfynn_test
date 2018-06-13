@@ -1,4 +1,5 @@
-#git_hub.py is used to update all github file for the git projec: 'hugo-contrarian'
+#git_hub.py is used to update all github file for the git projec: 'ABI_test'
+# from here Netlify builds the webpage to display at https://inspiring-turing-db6fbf.netlify.com/
 import base64
 from github import Github
 from github import InputGitTreeElement
