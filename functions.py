@@ -12,26 +12,12 @@ def blackfynn_get(dataset='Timeseries Dataset',collection=0,channels='sine 50 Hz
     ds = bf.get_dataset(dataset)
     print(ds)
 
-    # get all timeseries collections
+     # get all timeseries collections
     ts = []
     for ds_temp in ds:
         ts.append(ds_temp)
 
-    # show general channel information for our files
-    for ts_temp in ts:
-        print("---------------- Information for File: {} ----------------\n").format(str(ts_temp.name))
-
-        # nicely print the names and IDs of the channels for the first timeseries file
-        print "The channels available for this file are:"
-        for i in ts_temp.channels:
-            print i.name, "with ID = ", i.id
-
-        # show the number of channels in file
-        print
-        print("File '{}' has {} channels\n").format(ts_temp.name, len(ts_temp.channels))
-
-
-    # Get data for 1s length of time
+    
     # NOTE: THIS NEEDS TO BE MADE MODULAR
     data = ts[collection].get_data(length='1s')
 
@@ -65,4 +51,4 @@ def blackfynn_get(dataset='Timeseries Dataset',collection=0,channels='sine 50 Hz
     print('update ran successfully')
 
 
-blackfynn_get(channels='sine 1 Hz')
+blackfynn_get(dataset='Demo Data From BlackFynn',collection=2,channels='LG10')
